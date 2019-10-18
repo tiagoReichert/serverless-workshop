@@ -22,7 +22,34 @@ To start our workshop we prepared some examples with basic sintax and NodeJS pro
 
 ![image](images/05.png) 
 
-### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "<isindex></isindex>.bisiesto".
+### 6. Now let's see a leap year example. Check the code bisiesto and to run it change the Handler Field to "*basic.bisiesto*".
+
+```javascript
+'use strict';
+
+module.exports.handler = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: 'Go Serverless v1.0! Your function executed successfully!',
+      input: event,
+    }, null, 2),
+  };
+};
+
+module.exports.bisiesto = async (event) => {
+  var ano = 2000;
+  var bisiesto = false;
+  if((ano%4==0 && ano%100!=0) || ano%400==0) bisiesto = true;
+  return {
+    statusCode: 200,
+    body: JSON.stringify({
+      message: 'Año ' + ano + (bisiesto ? " és bisiesto." : " no és bisiesto."),
+      input: event,
+    }, null, 2),
+  };
+};
+```
 
 ![image](images/06.png) 
 
