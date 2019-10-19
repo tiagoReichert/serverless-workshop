@@ -16,14 +16,18 @@ DynamoDB is a no-SQL serverless database very popular at AWS. Let's start using 
 
 ### 3. Now let's deploy the NodeJS Lambda code:
 
-* cd w04-dynamodb
-* serverless deploy
+```console
+cd w04-dynamodb
+serverless deploy
+```
 
 ![image](images/02.png) 
 
 ### 4. Let's run the code to add new records and read the existing ones
 
-* serverless invoke -f dynamo -l
+```console
+serverless invoke -f dynamo -l
+```
 
 ![image](images/03.png) 
 
